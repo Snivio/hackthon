@@ -25,32 +25,37 @@ function submit_by_id() {
     var length = document.getElementById("length").value;
     var volume = document.getElementById("volume").value;
     var price = document.getElementById("price").value;
+    var quantity = document.getElementById("quantity").value;
 
 
 
-    var currentdate = new Date().toLocaleDateString();
+    var d = new Date();
+    var n = d.getSeconds();
+
 
     firebase.initializeApp(config);
     var currentdate = new Date().toLocaleDateString();
 
-    var ref = firebase.database().ref('snivio');
+    var ref = firebase.database().ref('Request');
     ref.push({
-        date: currentdate,
-        cname: name,
-        cemail: email,
-        telephone: tel,
-        dtype: type,
-        source: location1,
-        sourcelat: lat1,
-        sourcelong: longe1,
-        destination: location2,
-        destinationlat: lat2,
-        destinationlong: longe2,
-        pweight: weight,
+        ID: n,
+        Date: currentdate,
+        CName: name,
+        CEmail: email,
+        CPhone: tel,
+        Type: type,
+        Source: location1,
+        Sourcelat: lat1,
+        Sourcelong: longe1,
+        Destination: location2,
+        Destinationlat: lat2,
+        Destinationlong: longe2,
+        Pweight: weight,
         pwidth: width,
-        pheight: height,
-        plength: length,
-        pvolume: volume,
-        pprice: price,
+        Pheight: height,
+        Plength: length,
+        Pvolume: volume,
+        Price: price,
+        Pquantity: quantity,
     })
 }
