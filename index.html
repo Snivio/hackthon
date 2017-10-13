@@ -3,6 +3,8 @@
 <head>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
     <script src="js/jquery-3.2.1.js"></script>
     <script src="js/materialize.min.js"></script>
     <script src="js/materialize.js"></script>
@@ -19,6 +21,7 @@
     <link rel="stylesheet" type="text/css" href="css/navbar.css" />
     <link rel="stylesheet" type="text/css" href="css/parallax.css" />
     <link rel="stylesheet" type="text/css" href="css/popup.css" />
+    <link rel="stylesheet" type="text/css" href="css/track.css" />
 
 </head>
 
@@ -28,7 +31,8 @@
             <img id="logo" src="logo.png" height="110px" width="130px" align="left" />
 
             <div style="padding-left: 1050px;padding-top: 30px">
-                <a class=" waves-effect deep-orange darken-4 btn ">TRACK</a>
+                <a class=" waves-effect deep-orange darken-4 btn " id="entr">TRACK</a>
+
                 <a class="waves-effect green darken-4 btn " id="myBtn">REQUEST</a>
             </div>
         </div>
@@ -47,6 +51,59 @@
     <div class="parallax-container ">
         <div class="parallax "><img src="truck2.jpg "></div>
     </div>
+
+
+    <div id="myModalt" class="modalt">
+
+        <!-- Modal content -->
+        <div class="modal-contentt">
+            <div class="modal-headert">
+                <span class="closet">&times;</span>
+                <h2>REQUEST DETAILS</h2>
+            </div>
+            <div class="modal-bodyt">
+                <label for="id">ID:</label>
+                <input type="text" name="id" placeholder="2342234" style="text-align: center;width:270px" /><br>
+                <a class="waves-effect green darken-4 btn" href="a.html">DONE</a>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     <div id="myModal" class="modal">
@@ -118,26 +175,17 @@
     </div>
 
     <script>
-        // Get the modal
         var modal = document.getElementById('myModal');
-
-        // Get the button that opens the modal
         var btn = document.getElementById("myBtn");
-
-        // Get the <span> element that closes the modal
         var span = document.getElementsByClassName("close")[0];
-
-        // When the user clicks the button, open the modal 
         btn.onclick = function() {
-            modal.style.display = "block";
-        }
-
-        // When the user clicks on <span> (x), close the modal
+                modal.style.display = "block";
+            }
+            // When the user clicks on <span> (x), close the modal
         span.onclick = function() {
-            modal.style.display = "none";
-        }
-
-        // When the user clicks anywhere outside of the modal, close it
+                modal.style.display = "none";
+            }
+            // When the user clicks anywhere outside of the modal, close it
         window.onclick = function(event) {
             if (event.target == modal) {
                 modal.style.display = "none";
@@ -145,6 +193,24 @@
         }
     </script>
 
+    <script>
+        var mod = document.getElementById('myModalt');
+        var b = document.getElementById("entr");
+        var sp = document.getElementsByClassName("closet")[0];
+        b.onclick = function() {
+                mod.style.display = "block";
+            }
+            // When the user clicks on <span> (x), close the modal
+        sp.onclick = function() {
+                mod.style.display = "none";
+            }
+            // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == mod) {
+                mod.style.display = "none";
+            }
+        }
+    </script>
 
 </body>
 
